@@ -1,0 +1,88 @@
+@font-face{
+    font-family: chivo;
+    src:url("ChivoMono-MediumItalic.ttf");
+}
+:root{
+    --gap-book:30px;
+    --book-x:350px;
+    --book-y:200px;
+}
+
+body{
+    background-color: rgb(211, 156, 156);
+    background-size: cover;
+}
+
+.header{
+    font-family: chivo;
+    text-align: center;;
+
+}
+.addBook{
+    
+    text-align: center;
+    padding:20px;
+    position: sticky;
+    top:0px;
+    height:100px;
+    background-color: rgb(211, 156, 156);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.add{
+    font-size: 30px;
+    padding: 20px;
+    border: 5px solid  white;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 50%;
+    background-color: rgb(83, 9, 9);
+    color:white
+}
+.add:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.library{
+    margin:50px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, var(--book-x));
+    grid-auto-rows: var(--book-y);
+    justify-content:center;
+    gap:var(--gap-book);
+
+}
+.book{
+    padding: 10px;
+    padding-top: 0;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: chivo;
+    height:var(--book-y);
+    width:var(--book-x);
+    background-color: white;
+    box-shadow: 10px 5px 10px black;
+}
+.book .delete{
+    display:none;
+    position:absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.book:hover .delete{
+    display:inline;
+}
+.book:hover{
+    transform:scale(1.05);
+
+}
+form{
+    
+    display:none;
+    grid-template-columns: 1fr 1fr;
+    gap:5px;
+}
