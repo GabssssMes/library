@@ -2,22 +2,32 @@ let myLibrary=[];
 let book;
 let counter=0;
 modifyButtons();
-function addbook(title,number,author,read){
-    this.title=title;
-    this.author=author;
-    this.number=number;
-    this.read=read;
-    this.id=counter;
-    counter++;
-}
-addbook.prototype.info=function(){
-    if(book.read == false){
-        return String(this.title+" by "+this.author+", "+this.number+" pages, not read yet.");
+class addbook{
+    constructor (title,number,author,read){
+        this.title=title;
+        this.author=author;
+        this.number=number;
+        this.read=read;
+        this.id=counter;
+        counter++;
     }
-    else{
-        return String(this.title+" by "+this.author+", "+this.number+" pages, already read.");
+    info=()=>{
+        if(book.read == false){
+            return String(this.title+" by "+this.author+", "+this.number+" pages, not read yet.");
+        }
+        else{
+            return String(this.title+" by "+this.author+", "+this.number+" pages, already read.");
+        }
     }
 }
+//addbook.prototype.info=function(){
+//    if(book.read == false){
+//        return String(this.title+" by "+this.author+", "+this.number+" pages, not read yet.");
+//    }
+//    else{
+//        return String(this.title+" by "+this.author+", "+this.number+" pages, already read.");
+//    }
+//}
 function addBookToLibrary(book){
     myLibrary.push(book);
     showBooks();
